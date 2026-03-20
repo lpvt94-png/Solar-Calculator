@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your solar savings with our free US Solar ROI Calculator. Discover how much you can save with solar panels, federal tax credits, and lower utility bills. Get instant estimates for your home.">
+    <meta name="keywords" content="solar calculator, solar savings, solar ROI, solar panel cost, federal solar tax credit, residential solar, solar energy savings">
+    <meta name="author" content="Solar Savings Calculator">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="US Solar Savings & ROI Calculator - Free Solar Estimate">
+    <meta property="og:description" content="Calculate your potential solar savings instantly. Free calculator with federal tax credit estimates, payback period, and 25-year savings.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://images.pexels.com/photos/34680716/pexels-photo-34680716/free-photo-of-solar-panels-in-sunny-field-uberlandia-brazil.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+    <meta property="og:image" content="https://i.ytimg.com/vi/0ioAshrCW1A/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC9ZU31NvBIayQ5OAinYR-G8AU_fg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="US Solar Savings & ROI Calculator">
+    <meta name="twitter:description" content="Calculate your potential solar savings instantly with our free calculator.">
+    <meta name="twitter:image" content="https://www.residentialsolarpanels.org/wp-content/uploads/2025/02/solar-panel-roi-infographic-770x499.jpeg">
+    
+    <title>US Solar Savings & ROI Calculator - Free Solar Estimate 2026</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'solar-green': '#10b981',
+                        'solar-green-dark': '#059669',
+                        'solar-blue': '#0ea5e9',
+                        'solar-blue-dark': '#0284c7',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Analytics 4 - REPLACE WITH YOUR GA4 MEASUREMENT ID -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+        }
+        
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='https://static.vecteezy.com/system/resources/previews/059/525/564/non_2x/abstract-green-and-white-tribal-pattern-with-spirals-and-geometric-shapes-free-vector.jpg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v6h6V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .calculator-shadow {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .85;
+            }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        
+        .comparison-table td, .comparison-table th {
+            border: 1px solid #e5e7eb;
+        }
+        
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-solar-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <span class="text-xl font-bold text-gray-800">Solar Savings Calculator</span>
+            </div>
+            <a href="#calculator" class="bg-solar-green hover:bg-solar-green-dark text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg">
+                Calculate Now
+            </a>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Calculate Your Solar Savings in 60 Seconds
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-blue-50">
+                    Discover how much you can save with solar panels and the 30% Federal Tax Credit
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
+                        <div class="text-3xl font-bold">30%</div>
+                        <div class="text-sm text-blue-100">Federal Tax Credit</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
+                        <div class="text-3xl font-bold">25 Years</div>
+                        <div class="text-sm text-blue-100">Warranty Standard</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg border border-white/20">
+                        <div class="text-3xl font-bold">$30K+</div>
+                        <div class="text-sm text-blue-100">Average Savings</div>
+                    </div>
+                </div>
+                <a href="#calculator" class="inline-block bg-white text-solar-blue-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105">
+                    Get Your Free Solar Estimate →
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Badges -->
+    <section class="bg-white py-8 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 text-center text-sm text-gray-600">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-solar-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">100% Free Calculator</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-solar-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">No Obligation</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-solar-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">Instant Results</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-5 h-5 text-solar-green" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">Updated for 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Calculator Section -->
+    <section id="calculator" class="py-16 hero-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                        Free Solar Savings Calculator
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        Enter your information below to get an instant solar savings estimate
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-2xl calculator-shadow p-8 md:p-12">
+                    <!-- Calculator Form -->
+                    <form id="solarCalculator" class="space-y-6">
+                        <!-- ZIP Code Input -->
+                        <div>
+                            <label for="zipCode" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Your ZIP Code
+                            </label>
+                            <input 
+                                type="text" 
+                                id="zipCode" 
+                                name="zipCode" 
+                                maxlength="5"
+                                placeholder="e.g., 90210"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg transition-all duration-300"
+                                required
+                            >
+                            <p class="mt-1 text-xs text-gray-500">Used for regional solar data</p>
+                        </div>
+                        
+                        <!-- Monthly Electric Bill -->
+                        <div>
+                            <label for="monthlyBill" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Average Monthly Electric Bill ($)
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3.5 text-gray-500 text-lg">$</span>
+                                <input 
+                                    type="number" 
+                                    id="monthlyBill" 
+                                    name="monthlyBill" 
+                                    min="50"
+                                    max="1000"
+                                    placeholder="150"
+                                    class="w-full pl-8 pr-4 py-3 border-2 border-gray-300 rounded-lg text-lg transition-all duration-300"
+                                    required
+                                >
+                            </div>
+                            <p class="mt-1 text-xs text-gray-500">Check your recent utility bill</p>
+                        </div>
+                        
+                        <!-- Roof Orientation -->
+                        <div>
+                            <label for="roofOrientation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Primary Roof Orientation
+                            </label>
+                            <select 
+                                id="roofOrientation" 
+                                name="roofOrientation"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg text-lg transition-all duration-300 bg-white"
+                                required
+                            >
+                                <option value="">Select orientation...</option>
+                                <option value="south">South (Best)</option>
+                                <option value="southwest">Southwest (Excellent)</option>
+                                <option value="southeast">Southeast (Excellent)</option>
+                                <option value="west">West (Good)</option>
+                                <option value="east">East (Good)</option>
+                                <option value="north">North (Fair)</option>
+                            </select>
+                            <p class="mt-1 text-xs text-gray-500">South-facing roofs generate the most energy</p>
+                        </div>
+                        
+                        <!-- Calculate Button -->
+                        <button 
+                            type="submit"
+                            class="w-full bg-solar-green hover:bg-solar-green-dark text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                        >
+                            Calculate My Solar Savings →
+                        </button>
+                    </form>
+                    
+                    <!-- Results Section (Hidden Initially) -->
+                    <div id="results" class="mt-12 hidden slide-in">
+                        <div class="border-t-2 border-gray-200 pt-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                                Your Personalized Solar Savings Estimate
+                            </h3>
+                            
+                            <!-- Key Metrics Grid -->
+                            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                                <!-- System Size -->
+                                <div class="bg-gradient-to-br from-solar-blue to-solar-blue-dark text-white p-6 rounded-xl shadow-lg">
+                                    <div class="text-sm opacity-90 mb-2">Recommended System Size</div>
+                                    <div class="text-4xl font-bold mb-1"><span id="systemSize">0</span> kW</div>
+                                    <div class="text-xs opacity-80">Based on your energy usage</div>
+                                </div>
+                                
+                                <!-- 25-Year Savings -->
+                                <div class="bg-gradient-to-br from-solar-green to-solar-green-dark text-white p-6 rounded-xl shadow-lg">
+                                    <div class="text-sm opacity-90 mb-2">25-Year Total Savings</div>
+                                    <div class="text-4xl font-bold mb-1">$<span id="totalSavings">0</span></div>
+                                    <div class="text-xs opacity-80">After tax credits & incentives</div>
+                                </div>
+                                
+                                <!-- Payback Period -->
+                                <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl shadow-lg">
+                                    <div class="text-sm opacity-90 mb-2">Payback Period</div>
+                                    <div class="text-4xl font-bold mb-1"><span id="paybackYears">0</span> years</div>
+                                    <div class="text-xs opacity-80">Time to recover investment</div>
+                                </div>
+                                
+                                <!-- Environmental Impact -->
+                                <div class="bg-gradient-to-br from-green-600 to-green-800 text-white p-6 rounded-xl shadow-lg">
+                                    <div class="text-sm opacity-90 mb-2">Environmental Impact</div>
+                                    <div class="text-4xl font-bold mb-1"><span id="treesEquivalent">0</span> trees</div>
+                                    <div class="text-xs opacity-80">CO₂ offset over 25 years</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Detailed Breakdown -->
+                            <div class="bg-gray-50 p-6 rounded-xl mb-8">
+                                <h4 class="font-bold text-gray-800 mb-4">Financial Breakdown</h4>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Estimated System Cost:</span>
+                                        <span class="font-semibold text-gray-800">$<span id="systemCost">0</span></span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Federal Tax Credit (30%):</span>
+                                        <span class="font-semibold text-green-600">-$<span id="taxCredit">0</span></span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-t pt-3">
+                                        <span class="text-gray-800 font-bold">Net Investment:</span>
+                                        <span class="font-bold text-gray-800">$<span id="netCost">0</span></span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Annual Energy Production:</span>
+                                        <span class="font-semibold text-gray-800"><span id="annualProduction">0</span> kWh</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-600">Year 1 Savings:</span>
+                                        <span class="font-semibold text-green-600">$<span id="yearOneSavings">0</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- CTA Button -->
+                            <div class="text-center">
+                                <button 
+                                    onclick="scrollToLeadForm()"
+                                    class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl pulse-animation inline-block"
+                                >
+                                    Get Free Quotes from Top Installers →
+                                </button>
+                                <p class="mt-3 text-sm text-gray-600">Connect with pre-screened solar installers in your area</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
+                    Why Go Solar in 2026?
+                </h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Take advantage of historic incentives and lock in your energy costs for decades
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">30% Federal Tax Credit</h3>
+                        <p class="text-gray-600">
+                            The Investment Tax Credit (ITC) gives you 30% back on your solar system cost. Available through 2032, but don't wait—it decreases to 26% in 2033.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Protection from Rising Rates</h3>
+                        <p class="text-gray-600">
+                            Utility rates increase 3-5% annually. Lock in your energy costs today and save more as rates climb over the next 25 years.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Increase Home Value</h3>
+                        <p class="text-gray-600">
+                            Studies show solar panels increase home value by 4.1% on average. That's $20,000+ for a $500,000 home—often more than the system cost.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Environmental Impact</h3>
+                        <p class="text-gray-600">
+                            The average home solar system offsets 100+ tons of CO₂ over 25 years—equivalent to planting 2,500+ trees or not driving 250,000 miles.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Energy Independence</h3>
+                        <p class="text-gray-600">
+                            Generate your own clean electricity. Add battery storage for backup power during outages and true energy independence.
+                        </p>
+                    </div>
+                    
+                    <!-- Benefit 6 -->
+                    <div class="text-center">
+                        <div class="benefit-icon mx-auto mb-4">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Low Maintenance</h3>
+                        <p class="text-gray-600">
+                            Solar panels have no moving parts and require minimal maintenance. Most come with 25-year warranties and can last 30-40 years.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Table Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
+                    Solar Purchase vs Lease vs Traditional Utility
+                </h2>
+                <p class="text-center text-gray-600 mb-12">
+                    Compare your options and see why purchasing solar makes the most financial sense
+                </p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-xl shadow-lg comparison-table">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-6 py-4 text-left font-bold text-gray-800">Feature</th>
+                                <th class="px-6 py-4 text-center font-bold text-solar-green">Solar Purchase</th>
+                                <th class="px-6 py-4 text-center font-bold text-gray-800">Solar Lease/PPA</th>
+                                <th class="px-6 py-4 text-center font-bold text-gray-800">Traditional Utility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold text-gray-700">Ownership</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">You own the system</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">Third party owns</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">Utility company owns</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-700">30% Federal Tax Credit</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm font-bold text-green-600 mt-1">Yes - Save $9,000+</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">No - Goes to lessor</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">No</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold text-gray-700">Increase Home Value</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm font-bold text-green-600 mt-1">Yes - Up to $20K+</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">No / Minimal</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm text-gray-600 mt-1">No</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-700">25-Year Savings</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-2xl font-bold text-green-600">$30,000+</div>
+                                    <div class="text-sm text-gray-600 mt-1">Highest savings</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-2xl font-bold text-gray-600">$10,000</div>
+                                    <div class="text-sm text-gray-600 mt-1">Moderate savings</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-2xl font-bold text-red-600">$0</div>
+                                    <div class="text-sm text-gray-600 mt-1">No savings</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold text-gray-700">Upfront Cost</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">$15K-$30K</div>
+                                    <div class="text-sm text-gray-600 mt-1">Many financing options</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">$0</div>
+                                    <div class="text-sm text-gray-600 mt-1">But higher long-term cost</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">$0</div>
+                                    <div class="text-sm text-gray-600 mt-1">Pay monthly forever</div>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-700">Rate Increases</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-green-100 rounded-full">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm font-bold text-green-600 mt-1">Protected</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="text-yellow-600">⚠️</span>
+                                    <div class="text-sm text-gray-600 mt-1">Escalator clause (2-3%)</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 bg-red-100 rounded-full">
+                                        <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="text-sm font-bold text-red-600 mt-1">3-5% annually</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-semibold text-gray-700">Warranty Coverage</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">25 Years</div>
+                                    <div class="text-sm text-gray-600 mt-1">Full equipment warranty</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">20-25 Years</div>
+                                    <div class="text-sm text-gray-600 mt-1">Covered by lessor</div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="text-lg font-bold text-gray-800">N/A</div>
+                                    <div class="text-sm text-gray-600 mt-1">No equipment</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <div class="inline-block bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-green-800 mb-2">Winner: Solar Purchase</h3>
+                        <p class="text-gray-700">Purchasing your solar system provides the highest ROI, maximum tax benefits, and greatest long-term savings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lead Capture Section -->
+    <section id="leadForm" class="py-16 bg-gradient-to-br from-solar-blue to-solar-green">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center text-white mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        Ready to Go Solar? Get Free Quotes
+                    </h2>
+                    <p class="text-xl text-blue-50">
+                        Connect with top-rated, pre-screened solar installers in your area. Compare quotes and save even more.
+                    </p>
+                </div>
+                
+                <!-- AFFILIATE LEAD FORM INTEGRATION PLACEHOLDER -->
+                <!-- 
+                    Instructions: Replace this section with your affiliate lead form code
+                    Popular solar affiliate networks:
+                    
+                    1. Modernize (modernize.com)
+                       - High-quality leads, excellent conversion
+                       - Replace this section with their embed code
+                    
+                    2. EnergySage (energysage.com/affiliates)
+                       - Trusted marketplace, transparent pricing
+                       - Insert their referral widget code here
+                    
+                    3. Solar Reviews (solarreviews.com/partners)
+                       - Strong brand recognition
+                       - Add their lead capture form
+                    
+                    4. Profitise / Other Networks
+                       - Insert your specific affiliate form code
+                    
+                    Example integration:
+                    <div id="affiliate-form-container">
+                        [YOUR AFFILIATE FORM CODE HERE]
+                    </div>
+                -->
+                
+                <!-- BACKUP HTML LEAD FORM (Remove when affiliate form is active) -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+                    <form id="leadCaptureForm" class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div>
+                                <label for="leadFirstName" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    First Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="leadFirstName" 
+                                    name="firstName" 
+                                    placeholder="John"
+                                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg transition-all duration-300"
+                                    required
+                                >
+                            </div>
+                            <div>
+                                <label for="leadLastName" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Last Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="leadLastName" 
+                                    name="lastName" 
+                                    placeholder="Doe"
+                                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg transition-all duration-300"
+                                    required
+                                >
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="leadEmail" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Email Address *
+                            </label>
+                            <input 
+                                type="email" 
+                                id="leadEmail" 
+                                name="email" 
+                                placeholder="john@example.com"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg transition-all duration-300"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="leadPhone" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Phone Number *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="leadPhone" 
+                                name="phone" 
+                                placeholder="(555) 123-4567"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg transition-all duration-300"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="leadZipCode" class="block text-sm font-semibold text-gray-700 mb-2">
+                                ZIP Code *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="leadZipCode" 
+                                name="zipCode" 
+                                maxlength="5"
+                                placeholder="90210"
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg transition-all duration-300"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="text-xs text-gray-600 bg-gray-50 p-4 rounded-lg">
+                            By submitting this form, you agree to be contacted by solar installation partners. Your information will be shared with pre-screened installers in your area. No purchase necessary.
+                        </div>
+                        
+                        <button 
+                            type="submit"
+                            class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                            Get Free Solar Quotes →
+                        </button>
+                    </form>
+                </div>
+                <!-- END BACKUP FORM -->
+                
+                <div class="mt-6 text-center text-white text-sm">
+                    <p>✓ No obligation • ✓ Free quotes • ✓ Compare multiple installers • ✓ Save up to 20%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                    Frequently Asked Questions
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- FAQ 1 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">How accurate is this solar calculator?</h3>
+                        <p class="text-gray-700">
+                            Our calculator uses US national averages for electricity rates ($0.16/kWh), solar installation costs ($3.00/watt), and peak sun hours (4 hours/day). Your actual savings may vary based on your location, utility rates, roof characteristics, and available local incentives. For a precise estimate, request quotes from local installers.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">What is the 30% Federal Solar Tax Credit?</h3>
+                        <p class="text-gray-700">
+                            The Investment Tax Credit (ITC) allows you to deduct 30% of your solar system cost from your federal taxes. For a $30,000 system, that's $9,000 back. This incentive is available through 2032, then decreases to 26% in 2033 and 22% in 2034.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">How long do solar panels last?</h3>
+                        <p class="text-gray-700">
+                            Most solar panels come with 25-year performance warranties and can last 30-40 years. They typically lose about 0.5% efficiency per year, so after 25 years, they'll still operate at 87-88% of their original capacity.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Do I need to replace my roof before installing solar?</h3>
+                        <p class="text-gray-700">
+                            If your roof is in good condition with 10+ years of life remaining, you can install solar. If your roof needs replacement soon, it's best to do it before solar installation. Many homeowners bundle both projects together.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ 5 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">Can I finance my solar system?</h3>
+                        <p class="text-gray-700">
+                            Yes! Most installers offer financing options including solar loans (often with $0 down), home equity loans, HELOC, or PACE financing. Many homeowners find that their monthly loan payment is less than their previous electric bill.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ 6 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3">What happens if I sell my home?</h3>
+                        <p class="text-gray-700">
+                            Owned solar systems typically increase home value by 4.1% on average. The solar system transfers with the home sale, and studies show homes with solar sell faster and for more money than comparable non-solar homes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <svg class="w-6 h-6 text-solar-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                            <span class="font-bold text-lg">Solar Savings Calculator</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Helping American homeowners make informed solar decisions since 2026.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#calculator" class="hover:text-solar-green transition-colors">Calculator</a></li>
+                            <li><a href="#leadForm" class="hover:text-solar-green transition-colors">Get Quotes</a></li>
+                            <li><a href="#" class="hover:text-solar-green transition-colors">Solar Incentives</a></li>
+                            <li><a href="#" class="hover:text-solar-green transition-colors">How Solar Works</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4">Resources</h4>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="https://www.energy.gov/eere/solar/homeowners-guide-going-solar" target="_blank" class="hover:text-solar-green transition-colors">DOE Solar Guide</a></li>
+                            <li><a href="https://www.energy.gov/eere/solar/federal-solar-tax-credits-businesses" target="_blank" class="hover:text-solar-green transition-colors">Federal Tax Credits</a></li>
+                            <li><a href="https://www.dsireusa.org/" target="_blank" class="hover:text-solar-green transition-colors">State Incentives (DSIRE)</a></li>
+                            <li><a href="#" class="hover:text-solar-green transition-colors">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                    <p class="mb-2">
+                        © 2026 Solar Savings Calculator. All rights reserved. | 
+                        <a href="#" class="hover:text-solar-green transition-colors">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-solar-green transition-colors">Terms of Service</a>
+                    </p>
+                    <p class="text-xs">
+                        Disclaimer: This calculator provides estimates based on national averages. Actual savings depend on location, utility rates, system size, available incentives, and other factors. This site may receive compensation for qualified referrals. Always consult with licensed solar professionals for accurate quotes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Solar Calculator Logic
+        document.getElementById('solarCalculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const zipCode = document.getElementById('zipCode').value;
+            const monthlyBill = parseFloat(document.getElementById('monthlyBill').value);
+            const roofOrientation = document.getElementById('roofOrientation').value;
+            
+            // Validate inputs
+            if (!zipCode || !monthlyBill || !roofOrientation) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (zipCode.length !== 5 || isNaN(zipCode)) {
+                alert('Please enter a valid 5-digit ZIP code');
+                return;
+            }
+            
+            // Constants (US National Averages)
+            const ELECTRICITY_RATE = 0.16; // $/kWh
+            const PEAK_SUN_HOURS = 4; // hours per day
+            const INSTALL_COST_PER_WATT = 3.00; // $/watt
+            const FEDERAL_TAX_CREDIT = 0.30; // 30%
+            const UTILITY_RATE_INCREASE = 0.04; // 4% annual increase
+            const SYSTEM_DEGRADATION = 0.005; // 0.5% per year
+            const CO2_PER_KWH = 0.92; // lbs CO2 per kWh
+            const CO2_PER_TREE = 48; // lbs CO2 per tree per year
+            
+            // Roof orientation efficiency factor
+            const orientationFactors = {
+                'south': 1.0,
+                'southwest': 0.95,
+                'southeast': 0.95,
+                'west': 0.88,
+                'east': 0.88,
+                'north': 0.68
+            };
+            const orientationFactor = orientationFactors[roofOrientation] || 1.0;
+            
+            // Calculate annual electricity usage (kWh)
+            const annualUsage = (monthlyBill / ELECTRICITY_RATE) * 12;
+            
+            // Calculate recommended system size (kW)
+            // System size = annual usage / (365 days * peak sun hours * orientation factor * 0.85 efficiency)
+            const systemSizeKw = annualUsage / (365 * PEAK_SUN_HOURS * orientationFactor * 0.85);
+            const systemSizeRounded = Math.round(systemSizeKw * 10) / 10; // Round to 1 decimal
+            
+            // Calculate system cost
+            const systemCost = systemSizeKw * 1000 * INSTALL_COST_PER_WATT;
+            const taxCredit = systemCost * FEDERAL_TAX_CREDIT;
+            const netCost = systemCost - taxCredit;
+            
+            // Calculate annual production (in kWh)
+            const annualProduction = Math.round(systemSizeKw * PEAK_SUN_HOURS * 365 * orientationFactor * 0.85);
+            
+            // Calculate year 1 savings
+            const yearOneSavings = annualProduction * ELECTRICITY_RATE;
+            
+            // Calculate 25-year total savings (accounting for utility rate increases and system degradation)
+            let totalSavings = 0;
+            for (let year = 1; year <= 25; year++) {
+                const utilityRate = ELECTRICITY_RATE * Math.pow(1 + UTILITY_RATE_INCREASE, year - 1);
+                const systemEfficiency = 1 - (SYSTEM_DEGRADATION * (year - 1));
+                const yearlyProduction = annualProduction * systemEfficiency;
+                const yearlySavings = yearlyProduction * utilityRate;
+                totalSavings += yearlySavings;
+            }
+            totalSavings = totalSavings - netCost; // Subtract net investment
+            
+            // Calculate payback period
+            let paybackYears = 0;
+            let cumulativeSavings = 0;
+            for (let year = 1; year <= 25; year++) {
+                const utilityRate = ELECTRICITY_RATE * Math.pow(1 + UTILITY_RATE_INCREASE, year - 1);
+                const systemEfficiency = 1 - (SYSTEM_DEGRADATION * (year - 1));
+                const yearlyProduction = annualProduction * systemEfficiency;
+                const yearlySavings = yearlyProduction * utilityRate;
+                cumulativeSavings += yearlySavings;
+                
+                if (cumulativeSavings >= netCost && paybackYears === 0) {
+                    paybackYears = year;
+                    break;
+                }
+            }
+            
+            // Calculate environmental impact
+            const totalCO2Offset = (annualProduction * 25 * CO2_PER_KWH) / 2000; // tons of CO2
+            const treesEquivalent = Math.round((totalCO2Offset * 2000) / (CO2_PER_TREE * 25));
+            
+            // Update results
+            document.getElementById('systemSize').textContent = systemSizeRounded.toFixed(1);
+            document.getElementById('totalSavings').textContent = Math.round(totalSavings).toLocaleString();
+            document.getElementById('paybackYears').textContent = paybackYears;
+            document.getElementById('treesEquivalent').textContent = treesEquivalent.toLocaleString();
+            document.getElementById('systemCost').textContent = Math.round(systemCost).toLocaleString();
+            document.getElementById('taxCredit').textContent = Math.round(taxCredit).toLocaleString();
+            document.getElementById('netCost').textContent = Math.round(netCost).toLocaleString();
+            document.getElementById('annualProduction').textContent = annualProduction.toLocaleString();
+            document.getElementById('yearOneSavings').textContent = Math.round(yearOneSavings).toLocaleString();
+            
+            // Show results
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.classList.remove('hidden');
+            
+            // Smooth scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Track calculation event (Google Analytics)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calculate_solar', {
+                    'event_category': 'Calculator',
+                    'event_label': 'Solar Calculation',
+                    'value': Math.round(totalSavings)
+                });
+            }
+        });
+        
+        // Lead Capture Form (Backup - Replace with affiliate form)
+        document.getElementById('leadCaptureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = {
+                firstName: document.getElementById('leadFirstName').value,
+                lastName: document.getElementById('leadLastName').value,
+                email: document.getElementById('leadEmail').value,
+                phone: document.getElementById('leadPhone').value,
+                zipCode: document.getElementById('leadZipCode').value
+            };
+            
+            // Validate
+            if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.zipCode) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Track lead submission (Google Analytics)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Lead Form',
+                    'event_label': 'Solar Quote Request'
+                });
+            }
+            
+            // NOTE: This is a non-functional backup form
+            // Replace with your affiliate network's form processing
+            
+            // For demonstration, show success message
+            alert('Thank you for your interest! This is a demonstration form. Please integrate your affiliate lead form for actual lead capture.');
+            
+            // Reset form
+            this.reset();
+            
+            // In production, you would send this to your affiliate network's API or form handler
+            // Example:
+            // fetch('YOUR_AFFILIATE_API_ENDPOINT', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(formData)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     // Handle success
+            //     alert('Thank you! A solar expert will contact you shortly.');
+            //     this.reset();
+            // })
+            // .catch(error => {
+            //     // Handle error
+            //     alert('There was an error. Please try again.');
+            // });
+        });
+        
+        // Smooth scroll function for CTA
+        function scrollToLeadForm() {
+            document.getElementById('leadForm').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Track CTA click
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    'event_category': 'CTA',
+                    'event_label': 'Get Free Quotes'
+                });
+            }
+        }
+        
+        // Populate lead form ZIP from calculator
+        document.getElementById('zipCode').addEventListener('change', function() {
+            document.getElementById('leadZipCode').value = this.value;
+        });
+    </script>
+</body>
+</html>
